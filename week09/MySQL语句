@@ -1,0 +1,46 @@
+3> create table user (
+	id INT PRIMARY KEY,
+	name VARCHAR(20),
+	sex VARCHAR(10),
+	age INT,
+	phone VARCHAR(100)
+   );
+ > insert into user(id, name, sex, age, phone) 
+   values(1,'张三', '男', '25', '13800138000');
+
+4> select * from user where age >= 20 and age <= 30;
+
+5> delete from user where name like '张%';
+
+6> select avg(age) as AgeAverage from user;
+
+7> select * from user where age >=20 and age <=30 and name like '张%' order by age desc;
+
+8> CREATE TABLE team (
+     id INT PRIMARY KEY,
+     name VARCHAR(255) NOT NULL
+   );
+
+   CREATE TABLE score (
+	id INT,
+     userid INT,
+     teamid INT,
+     score INT,
+     FOREIGN KEY (userid) REFERENCES user(id),
+     FOREIGN KEY (teamid) REFERENCES team(id),
+     PRIMARY KEY (userid, teamid)
+   );
+
+9> SELECT u.*
+   from user u
+   join score s on u.id = s.userid
+   join team t on s.teamid = t.id
+   where t.name = 'ECNU' and u.age < 20;
+
+10> select sum(score.score) as ECNU_total_score
+    from user
+    join score on user.id=score.userid
+    join team on score.teamid=team.id
+    where team.name= 'ECNU';
+
+
