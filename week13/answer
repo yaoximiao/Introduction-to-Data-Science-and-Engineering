@@ -1,0 +1,5 @@
+1.总房屋面积（Total Area）：总房屋面积 = 房屋面积 + 地下室面积 + 车库面积
+2.总房间数（Total Rooms）：总房间数 = 卧室数 + 浴室数
+3.建筑年龄（Age of Building）：建筑年龄 = 当前年份 - 建筑年份
+4.房屋类型的编码（House Type Encoding）：使用独热编码或标签编码将房屋类型转换为数字表示
+5.性价比（Cost Effectiveness）：性价比 = 社区质量评分 / 销售价格
